@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F411E4507D600D8228D /* AppDelegate.swift */; };
-		E6336F441E4507D600D8228D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F431E4507D600D8228D /* ViewController.swift */; };
 		E6336F471E4507D600D8228D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6336F451E4507D600D8228D /* Main.storyboard */; };
 		E6336F491E4507D600D8228D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6336F481E4507D600D8228D /* Assets.xcassets */; };
 		E6336F4C1E4507D600D8228D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6336F4A1E4507D600D8228D /* LaunchScreen.storyboard */; };
 		E6336F571E4507D700D8228D /* DidDoDoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F561E4507D700D8228D /* DidDoDoneTests.swift */; };
 		E6336F621E4507D700D8228D /* DidDoDoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F611E4507D700D8228D /* DidDoDoneUITests.swift */; };
+		E6336F711E453A4400D8228D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F701E453A4400D8228D /* MainViewController.swift */; };
+		E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F741E45469000D8228D /* SettingsViewController.swift */; };
+		E6336F781E48388800D8228D /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F771E48388800D8228D /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		E6336F3E1E4507D600D8228D /* DidDoDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DidDoDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6336F411E4507D600D8228D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6336F431E4507D600D8228D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6336F461E4507D600D8228D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6336F481E4507D600D8228D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6336F4B1E4507D600D8228D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		E6336F5D1E4507D700D8228D /* DidDoDoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DidDoDoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6336F611E4507D700D8228D /* DidDoDoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidDoDoneUITests.swift; sourceTree = "<group>"; };
 		E6336F631E4507D700D8228D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6336F701E453A4400D8228D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E6336F741E45469000D8228D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E6336F771E48388800D8228D /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,9 @@
 		E6336F401E4507D600D8228D /* DidDoDone */ = {
 			isa = PBXGroup;
 			children = (
+				E6336F761E48379300D8228D /* Views */,
 				E6336F411E4507D600D8228D /* AppDelegate.swift */,
-				E6336F431E4507D600D8228D /* ViewController.swift */,
+				E6336F6F1E4509C000D8228D /* ViewControllers */,
 				E6336F451E4507D600D8228D /* Main.storyboard */,
 				E6336F481E4507D600D8228D /* Assets.xcassets */,
 				E6336F4A1E4507D600D8228D /* LaunchScreen.storyboard */,
@@ -123,6 +128,23 @@
 				E6336F631E4507D700D8228D /* Info.plist */,
 			);
 			path = DidDoDoneUITests;
+			sourceTree = "<group>";
+		};
+		E6336F6F1E4509C000D8228D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6336F701E453A4400D8228D /* MainViewController.swift */,
+				E6336F741E45469000D8228D /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E6336F761E48379300D8228D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6336F771E48388800D8228D /* ToDoCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6336F441E4507D600D8228D /* ViewController.swift in Sources */,
 				E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */,
+				E6336F711E453A4400D8228D /* MainViewController.swift in Sources */,
+				E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */,
+				E6336F781E48388800D8228D /* ToDoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +538,7 @@
 				E6336F681E4507D700D8228D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6336F691E4507D700D8228D /* Build configuration list for PBXNativeTarget "DidDoDoneTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +547,7 @@
 				E6336F6B1E4507D700D8228D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6336F6C1E4507D700D8228D /* Build configuration list for PBXNativeTarget "DidDoDoneUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +556,7 @@
 				E6336F6E1E4507D700D8228D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
