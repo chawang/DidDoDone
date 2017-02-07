@@ -19,24 +19,32 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         toDoTableView.dataSource = self
         toDoTableView.delegate = self
         toDoTableView.rowHeight = UITableViewAutomaticDimension
-        toDoTableView.estimatedRowHeight = 120
+        toDoTableView.estimatedRowHeight = 80
 
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func decrement(_ sender: Any) {
-        toDoLabel.text = "0"
+        let initial = Int(toDoLabel.text!)
+        let unformattedText = initial! - 1
+//        let formattedText = String(format: "%d", unformattedText)
+        toDoLabel.text = "\(unformattedText)"
     }
     @IBAction func increment(_ sender: Any) {
-        toDoLabel.text = "1"
+        let initial = Int(toDoLabel.text!)
+        let unformattedText = initial! + 1
+//        let formattedText = String(format: "%d", unformattedText)
+        toDoLabel.text = "\(unformattedText)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
+        
+        cell.setToDoCell(row: indexPath.row)
         
         return cell
     }
