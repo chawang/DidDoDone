@@ -42,11 +42,20 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.textAlignment = .center
+        var title: String
         if (pickerView == durationPicker) {
-            return duration[row]
+            title = duration[row]
+            let myTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "Optima", size: 15.0)!,NSForegroundColorAttributeName:UIColor.black])
+            pickerLabel.attributedText = myTitle
+            return pickerLabel
         } else if (pickerView == repetitionPicker) {
-            return repetition[row]
+            title = repetition[row]
+            let myTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "Optima", size: 15.0)!,NSForegroundColorAttributeName:UIColor.black])
+            pickerLabel.attributedText = myTitle
+            return pickerLabel
         } else {
             fatalError("Unhandled picker \(pickerView)")
         }

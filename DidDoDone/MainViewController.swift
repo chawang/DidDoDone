@@ -14,15 +14,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var intervalLabel: UILabel!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var toDoTableView: UITableView!
+    @IBOutlet weak var completedButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toDoTableView.dataSource = self
         toDoTableView.delegate = self
         toDoTableView.rowHeight = UITableViewAutomaticDimension
-        toDoTableView.estimatedRowHeight = 80
-
-        // Do any additional setup after loading the view, typically from a nib.
+        toDoTableView.estimatedRowHeight = 100
     }
 
     @IBAction func decrement(_ sender: Any) {
