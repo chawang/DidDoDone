@@ -16,6 +16,7 @@
 		E6336F711E453A4400D8228D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F701E453A4400D8228D /* MainViewController.swift */; };
 		E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F741E45469000D8228D /* SettingsViewController.swift */; };
 		E6336F781E48388800D8228D /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F771E48388800D8228D /* ToDoCell.swift */; };
+		E665609E1E4A7FE000EB01D0 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E665609D1E4A7FE000EB01D0 /* AddToDoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E6336F701E453A4400D8228D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E6336F741E45469000D8228D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E6336F771E48388800D8228D /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		E665609D1E4A7FE000EB01D0 /* AddToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				E6336F701E453A4400D8228D /* MainViewController.swift */,
 				E6336F741E45469000D8228D /* SettingsViewController.swift */,
+				E665609D1E4A7FE000EB01D0 /* AddToDoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */,
 				E6336F711E453A4400D8228D /* MainViewController.swift in Sources */,
+				E665609E1E4A7FE000EB01D0 /* AddToDoViewController.swift in Sources */,
 				E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */,
 				E6336F781E48388800D8228D /* ToDoCell.swift in Sources */,
 			);

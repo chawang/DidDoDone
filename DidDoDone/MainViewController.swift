@@ -10,7 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var toDoLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var intervalLabel: UILabel!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var toDoTableView: UITableView!
     
@@ -25,16 +26,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func decrement(_ sender: Any) {
-        let initial = Int(toDoLabel.text!)
+        let initial = Int(intervalLabel.text!)
         let unformattedText = initial! - 1
 //        let formattedText = String(format: "%d", unformattedText)
-        toDoLabel.text = "\(unformattedText)"
+        intervalLabel.text = "\(unformattedText)"
     }
     @IBAction func increment(_ sender: Any) {
-        let initial = Int(toDoLabel.text!)
+        let initial = Int(intervalLabel.text!)
         let unformattedText = initial! + 1
 //        let formattedText = String(format: "%d", unformattedText)
-        toDoLabel.text = "\(unformattedText)"
+        intervalLabel.text = "\(unformattedText)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
