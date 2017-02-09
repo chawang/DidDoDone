@@ -8,36 +8,73 @@
 
 import UIKit
 
-class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var goalTextField: UITextField!
+    @IBOutlet weak var goalTitleTextField: UITextField!
     @IBOutlet weak var repetitionTextField: UITextField!
-    @IBOutlet weak var repetitionPicker: UIPickerView!
-    @IBOutlet weak var durationTextField: UITextField!
-    @IBOutlet weak var durationPicker: UIPickerView!
+//    @IBOutlet weak var repetitionPicker: UIPickerView!
+    @IBOutlet weak var frequencyPicker: UIPickerView!
    
     let repetition = ["second(s)", "minutes(s)", "hour(s)", "mile(s)", "km(s)", ]
-    let duration = ["day(s)", "week(s)", "month(s)", "year(s)"]
+    let frequency = ["daily", "weekly", "monthly"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        repetitionPicker.dataSource = self
-        repetitionPicker.delegate = self
+//        repetitionPicker.dataSource = self
+//        repetitionPicker.delegate = self
         
-        durationPicker.dataSource = self
-        durationPicker.delegate = self
+        frequencyPicker.dataSource = self
+        frequencyPicker.delegate = self
+        
+        goalTitleTextField.delegate = self
+        repetitionTextField.delegate = self
+        
+        repetitionTextField.keyboardType = UIKeyboardType.numberPad
+        addDoneButtonOnKeyboard()
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == goalTitleTextField) {
+            repetitionTextField.becomeFirstResponder()
+        }
+        return false
+    }
+    
+    func addDoneButtonOnKeyboard()
+    {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = UIBarStyle.default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneButtonAction))
+        
+        var items = Array<UIBarButtonItem>()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.setItems(items, animated: true)
+        doneToolbar.sizeToFit()
+        
+        repetitionTextField.inputAccessoryView = doneToolbar
+    }
+    
+    func doneButtonAction()
+    {
+        repetitionTextField.endEditing(true)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView == durationPicker) {
-            return duration.count
-        } else if (pickerView == repetitionPicker) {
-            return repetition.count
-        } else {
+        if (pickerView == frequencyPicker) {
+            return frequency.count
+        }
+//        else if (pickerView == repetitionPicker) {
+//            return repetition.count
+//        }
+        else {
             fatalError("Unhandled picker \(pickerView)")
         }
     }
@@ -46,17 +83,19 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let pickerLabel = UILabel()
         pickerLabel.textAlignment = .center
         var title: String
-        if (pickerView == durationPicker) {
-            title = duration[row]
+        if (pickerView == frequencyPicker) {
+            title = frequency[row]
             let myTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "Optima", size: 15.0)!,NSForegroundColorAttributeName:UIColor.black])
             pickerLabel.attributedText = myTitle
             return pickerLabel
-        } else if (pickerView == repetitionPicker) {
-            title = repetition[row]
-            let myTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "Optima", size: 15.0)!,NSForegroundColorAttributeName:UIColor.black])
-            pickerLabel.attributedText = myTitle
-            return pickerLabel
-        } else {
+        }
+//        else if (pickerView == repetitionPicker) {
+//            title = repetition[row]
+//            let myTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "Optima", size: 15.0)!,NSForegroundColorAttributeName:UIColor.black])
+//            pickerLabel.attributedText = myTitle
+//            return pickerLabel
+//        }
+        else {
             fatalError("Unhandled picker \(pickerView)")
         }
     }
