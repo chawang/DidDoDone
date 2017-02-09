@@ -61,7 +61,10 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+    }
+    
+    @IBAction func cancelAdd(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

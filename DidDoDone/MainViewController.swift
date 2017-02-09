@@ -40,7 +40,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
         
@@ -48,12 +47,28 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        Repeats because segue is already bound in storyboard
+//        performSegue(withIdentifier: "ShowToDoDetailsSegue", sender: self)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ShowToDoDetailsSegue") {
+            let cell = sender as! ToDoCell
+            let index = toDoTableView.indexPath(for: cell)
+            let row = index?.row
+            
+            let detailView = segue.destination as! DetailToDoViewController
+//            View controller isn't fully initialized yet so label cannot be written too directly
+//            detailView.goalLabel.text = "testing"
+            detailView.goalText = "\(cell.toDoItemLabel.text!) of row:\(row!)"
+        }
+    }
 
 }
 

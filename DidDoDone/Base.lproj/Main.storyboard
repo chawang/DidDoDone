@@ -87,6 +87,7 @@
                                         <connections>
                                             <outlet property="statusImage" destination="scn-AO-ELy" id="DEQ-Bd-6Mz"/>
                                             <outlet property="toDoItemLabel" destination="KJf-iF-6sa" id="N1x-FX-4Mp"/>
+                                            <segue destination="yhe-5L-A9R" kind="show" identifier="ShowToDoDetailsSegue" id="DJx-QS-QWg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -121,7 +122,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bck-jj-9LK" kind="show" id="Kn9-oG-YBw"/>
+                                    <segue destination="Bck-jj-9LK" kind="presentation" id="Kn9-oG-YBw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGa-jj-4D3">
@@ -181,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail To Do View Controller-->
         <scene sceneID="Xcu-2c-Ezm">
             <objects>
-                <viewController id="yhe-5L-A9R" sceneMemberID="viewController">
+                <viewController id="yhe-5L-A9R" customClass="DetailToDoViewController" customModule="DidDoDone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2wN-L4-Rbh"/>
                         <viewControllerLayoutGuide type="bottom" id="63S-G2-jSM"/>
@@ -192,12 +193,27 @@
                     <view key="view" contentMode="scaleToFill" id="qhI-uT-hdI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5do-gj-SCG">
+                                <rect key="frame" x="160.5" y="89" width="53" height="30"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5do-gj-SCG" firstAttribute="top" secondItem="2wN-L4-Rbh" secondAttribute="bottom" constant="25" id="U5U-tm-u38"/>
+                            <constraint firstItem="5do-gj-SCG" firstAttribute="centerX" secondItem="qhI-uT-hdI" secondAttribute="centerX" id="fVo-7C-3ig"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="goalLabel" destination="5do-gj-SCG" id="mNm-cM-xBX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFH-Le-4sT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="37"/>
+            <point key="canvasLocation" x="908" y="36.431784107946029"/>
         </scene>
         <!--Add To Do View Controller-->
         <scene sceneID="Ri1-O6-hIZ">
@@ -212,13 +228,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqQ-ug-fF2">
-                                <rect key="frame" x="30" y="94" width="48" height="24"/>
+                                <rect key="frame" x="30" y="50" width="48" height="24"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceL-jD-4Fh" userLabel="titleTextField">
-                                <rect key="frame" x="30" y="128" width="315" height="30"/>
+                                <rect key="frame" x="30" y="84" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -230,52 +246,48 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLf-M2-RFz">
                                 <rect key="frame" x="100" y="597" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelAdd:" destination="Bck-jj-9LK" eventType="touchUpInside" id="6uI-vq-tgW"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45f-h4-qic">
-                                <rect key="frame" x="235" y="198" width="110" height="80"/>
+                                <rect key="frame" x="235" y="154" width="110" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="fxf-52-gGW"/>
                                     <constraint firstAttribute="height" constant="80" id="lVq-3s-boA"/>
                                 </constraints>
                             </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ZZ-M6-VLF">
-                                <rect key="frame" x="30" y="223" width="195" height="30"/>
+                                <rect key="frame" x="30" y="179" width="195" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repetition:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-QO-Wde">
-                                <rect key="frame" x="30" y="189" width="93.5" height="24"/>
+                                <rect key="frame" x="30" y="145" width="93.5" height="24"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fat-U1-Wmf">
-                                <rect key="frame" x="235" y="318" width="110" height="80"/>
+                                <rect key="frame" x="235" y="274" width="110" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Qac-Gy-uhI"/>
                                     <constraint firstAttribute="height" constant="80" id="UUY-ue-Xsu"/>
                                 </constraints>
                             </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SKl-8D-8gY">
-                                <rect key="frame" x="30" y="343" width="195" height="30"/>
+                                <rect key="frame" x="30" y="299" width="195" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghQ-Aj-pb6">
-                                <rect key="frame" x="30" y="309" width="82.5" height="24"/>
+                                <rect key="frame" x="30" y="265" width="82.5" height="24"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcV-jN-AWT" userLabel="titleTextField">
-                                <rect key="frame" x="30" y="128" width="315" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -311,14 +323,14 @@
                     <connections>
                         <outlet property="durationPicker" destination="fat-U1-Wmf" id="XCb-7J-ozM"/>
                         <outlet property="durationTextField" destination="SKl-8D-8gY" id="08J-yT-qHc"/>
-                        <outlet property="goalTextField" destination="hcV-jN-AWT" id="M4c-Hd-XRf"/>
+                        <outlet property="goalTextField" destination="ceL-jD-4Fh" id="z5O-YL-TF9"/>
                         <outlet property="repetitionPicker" destination="45f-h4-qic" id="oDN-og-fdH"/>
                         <outlet property="repetitionTextField" destination="0ZZ-M6-VLF" id="PqD-Rj-3i0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiC-Jr-dFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="790"/>
+            <point key="canvasLocation" x="33" y="782"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="d1g-Pd-8LV">
