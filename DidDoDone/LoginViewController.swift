@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: Any) {
+        FIRAuth.auth()?.signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+            if (error != nil) {
+                print(error)
+            } else {
+                self.performSegue(withIdentifier: "LoginSegue", sender: user)
+            }
+        }
     }
 
     @IBAction func onCreate(_ sender: Any) {
+        FIRAuth.auth()?.createUser(withEmail: email.text!, password: password.text!) { (user, error) in
+            if (error != nil) {
+                print(error)
+            } else {
+                self.performSegue(withIdentifier: "LoginSegue", sender: user)
+            }
+        }
     }
     
     /*
