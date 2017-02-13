@@ -43,7 +43,7 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func addDoneButtonOnKeyboard()
     {
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        let doneToolbar: UIToolbar = UIToolbar()
         doneToolbar.barStyle = UIBarStyle.default
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)

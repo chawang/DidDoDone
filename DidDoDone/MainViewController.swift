@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var toDoTableView: UITableView!
     @IBOutlet weak var completedButton: UIButton!
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()

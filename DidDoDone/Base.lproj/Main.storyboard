@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mKJ-dp-8RM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBZ-RC-Vmm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,6 +24,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ih-Jv-o8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33" y="-684"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="dh3-sE-CnU">
+            <objects>
+                <viewController id="sBZ-RC-Vmm" customClass="LoginViewController" customModule="DidDoDone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eDB-lf-Qsb"/>
+                        <viewControllerLayoutGuide type="bottom" id="blA-Mx-giI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nxv-UW-2p6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o8m-GO-YoU">
+                                <rect key="frame" x="62" y="90" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="GLa-V6-ZSb"/>
+                                    <constraint firstAttribute="height" constant="250" id="xIN-tx-uh6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEs-LX-25G">
+                                <rect key="frame" x="257" y="490" width="48" height="33"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="onCreate:" destination="sBZ-RC-Vmm" eventType="touchUpInside" id="t8r-Xn-p5b"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxf-HW-dT9">
+                                <rect key="frame" x="50" y="390" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOe-eR-1HS">
+                                <rect key="frame" x="50" y="440" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cd4-p9-gJf">
+                                <rect key="frame" x="70" y="490" width="41" height="33"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onLogin:" destination="sBZ-RC-Vmm" eventType="touchUpInside" id="0yV-IP-o0H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sxf-HW-dT9" firstAttribute="top" secondItem="o8m-GO-YoU" secondAttribute="bottom" constant="50" id="0Ed-f4-o9O"/>
+                            <constraint firstItem="Sxf-HW-dT9" firstAttribute="centerX" secondItem="Nxv-UW-2p6" secondAttribute="centerX" id="48e-h3-b8E"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Sxf-HW-dT9" secondAttribute="trailing" constant="50" id="5pa-dg-OSP"/>
+                            <constraint firstItem="Cd4-p9-gJf" firstAttribute="leading" secondItem="UOe-eR-1HS" secondAttribute="leading" constant="20" id="7qw-rb-0A1"/>
+                            <constraint firstItem="Cd4-p9-gJf" firstAttribute="top" secondItem="UOe-eR-1HS" secondAttribute="bottom" constant="20" id="FxV-DK-gru"/>
+                            <constraint firstItem="dEs-LX-25G" firstAttribute="top" secondItem="UOe-eR-1HS" secondAttribute="bottom" constant="20" id="GA1-ee-YAj"/>
+                            <constraint firstItem="UOe-eR-1HS" firstAttribute="centerX" secondItem="Nxv-UW-2p6" secondAttribute="centerX" id="Ihe-zK-fw3"/>
+                            <constraint firstItem="UOe-eR-1HS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Nxv-UW-2p6" secondAttribute="leading" constant="50" id="KaO-yD-Qc1"/>
+                            <constraint firstItem="Sxf-HW-dT9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Nxv-UW-2p6" secondAttribute="leading" constant="50" id="MpR-zm-uBD"/>
+                            <constraint firstItem="o8m-GO-YoU" firstAttribute="top" secondItem="eDB-lf-Qsb" secondAttribute="bottom" constant="70" id="OHC-P8-ohr"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="UOe-eR-1HS" secondAttribute="trailing" constant="50" id="V6K-y6-riQ"/>
+                            <constraint firstItem="o8m-GO-YoU" firstAttribute="centerX" secondItem="Nxv-UW-2p6" secondAttribute="centerX" id="m7T-aP-o6t"/>
+                            <constraint firstItem="dEs-LX-25G" firstAttribute="trailing" secondItem="UOe-eR-1HS" secondAttribute="trailing" constant="-20" id="maK-QH-AJb"/>
+                            <constraint firstItem="UOe-eR-1HS" firstAttribute="top" secondItem="Sxf-HW-dT9" secondAttribute="bottom" constant="20" id="vNh-g9-u6c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="UOe-eR-1HS" id="UF3-fE-pcJ"/>
+                        <outlet property="userNameTextField" destination="Sxf-HW-dT9" id="R6m-X0-To3"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoggedInSegue" id="De0-a5-YFq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTg-U2-1CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879.20000000000005" y="36.431784107946029"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -330,7 +406,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gul-8C-9T1">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gul-8C-9T1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p82-Pb-tuW">
@@ -362,4 +438,7 @@
         <image name="Ok" width="514" height="514"/>
         <image name="Plus" width="440" height="440"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="De0-a5-YFq"/>
+    </inferredMetricsTieBreakers>
 </document>
