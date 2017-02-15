@@ -8,6 +8,7 @@ target 'DidDoDone' do
   # Pods for DidDoDone
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   
   target 'DidDoDoneTests' do
     inherit! :search_paths
