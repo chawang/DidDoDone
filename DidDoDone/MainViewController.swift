@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -16,6 +17,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var toDoTableView: UITableView!
     @IBOutlet weak var completedButton: UIButton!
     let defaults = UserDefaults.standard
+    
+    let ref = FIRDatabase.database().reference()
+    let user = FIRAuth.auth()?.currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()

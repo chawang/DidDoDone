@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
@@ -15,7 +16,10 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 //    @IBOutlet weak var repetitionPicker: UIPickerView!
     @IBOutlet weak var frequencyPicker: UIPickerView!
    
-    let repetition = ["second(s)", "minutes(s)", "hour(s)", "mile(s)", "km(s)", ]
+    let ref = FIRDatabase.database().reference()
+    let user = FIRAuth.auth()?.currentUser
+    
+//    let repetition = ["second(s)", "minutes(s)", "hour(s)", "mile(s)", "km(s)", ]
     let frequency = ["daily", "weekly", "monthly"]
     
     override func viewDidLoad() {
@@ -31,7 +35,26 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         repetitionTextField.delegate = self
         
         repetitionTextField.keyboardType = UIKeyboardType.numberPad
-        addDoneButtonOnKeyboard()
+        addDoneOverKeyboard()
+    }
+
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func saveGoal(_ sender: Any) {
+        let goal = goalTitleTextField.text!
+        let rep = repetitionTextField.text!
+        let freq = frequency[frequencyPicker.selectedRow(inComponent: 0)]
+        let date = Date()
+        
+        let savedInfo = ["repetition":rep, "frequency":freq, "created":"\(date.timeIntervalSinceReferenceDate)"]
+
+        //TODO:write a check for duplicates
+        self.ref.child("user/\((user?.uid)!)/\(goal)").setValue(savedInfo)
+        dismiss(animated: true, completion: nil)
+        
+        //Below code overwrites all child nodes
+//        self.ref.child("goal").child((user?.uid)!).setValue([goal:rep])
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -41,7 +64,7 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return false
     }
     
-    func addDoneButtonOnKeyboard()
+    func addDoneOverKeyboard()
     {
         let doneToolbar: UIToolbar = UIToolbar()
         doneToolbar.barStyle = UIBarStyle.default
@@ -58,7 +81,6 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         repetitionTextField.inputAccessoryView = doneToolbar
     }
-    
     func doneButtonAction()
     {
         repetitionTextField.endEditing(true)
@@ -100,10 +122,6 @@ class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    }
-    
-    @IBAction func cancelAdd(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
