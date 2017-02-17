@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBZ-RC-Vmm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBZ-RC-Vmm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -128,7 +128,7 @@
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="ToDoCell" rowHeight="100" id="tC3-G8-Qbw" userLabel="ToDoCell" customClass="ToDoCell" customModule="DidDoDone" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="ToDoCell" rowHeight="100" id="tC3-G8-Qbw" userLabel="ToDoCell" customClass="GoalCell" customModule="DidDoDone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tC3-G8-Qbw" id="8Lj-2N-cdx">
@@ -239,7 +239,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="v6u-h3-L9P">
                         <barButtonItem key="leftBarButtonItem" id="G3a-nI-kfz"/>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="44T-Yt-0PB">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="44T-Yt-0PB">
                             <connections>
                                 <segue destination="BV3-Yv-vda" kind="show" id="mHw-6I-ONR"/>
                             </connections>
@@ -290,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="908" y="37"/>
         </scene>
-        <!--Add To Do View Controller-->
+        <!--Add Goal View Controller-->
         <scene sceneID="Ri1-O6-hIZ">
             <objects>
-                <viewController id="Bck-jj-9LK" customClass="AddToDoViewController" customModule="DidDoDone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bck-jj-9LK" customClass="AddGoalViewController" customModule="DidDoDone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mVx-dl-XV3"/>
                         <viewControllerLayoutGuide type="bottom" id="v1A-UI-CBH"/>
@@ -409,17 +409,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gul-8C-9T1">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gul-8C-9T1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p82-Pb-tuW">
-                                        <rect key="frame" x="114.5" y="30" width="145" height="30"/>
+                                        <rect key="frame" x="114.5" y="80" width="145" height="30"/>
                                         <state key="normal" title="Restore my purchase"/>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="p82-Pb-tuW" firstAttribute="centerX" secondItem="Gul-8C-9T1" secondAttribute="centerX" id="ZVr-1M-5as"/>
-                                    <constraint firstItem="p82-Pb-tuW" firstAttribute="top" secondItem="Gul-8C-9T1" secondAttribute="top" constant="30" id="zRh-Fm-yIp"/>
+                                    <constraint firstItem="p82-Pb-tuW" firstAttribute="top" secondItem="Gul-8C-9T1" secondAttribute="top" constant="80" id="Xch-mh-hZV"/>
+                                    <constraint firstItem="p82-Pb-tuW" firstAttribute="leading" secondItem="Gul-8C-9T1" secondAttribute="leading" constant="115" id="oyl-Ra-bMn"/>
+                                    <constraint firstAttribute="trailing" secondItem="p82-Pb-tuW" secondAttribute="trailing" constant="115" id="oyv-pm-WbC"/>
+                                    <constraint firstItem="p82-Pb-tuW" firstAttribute="centerX" secondItem="Gul-8C-9T1" secondAttribute="centerX" id="xZW-SE-Dun"/>
+                                    <constraint firstAttribute="bottom" secondItem="p82-Pb-tuW" secondAttribute="bottom" constant="400" id="zvu-Ix-oV1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

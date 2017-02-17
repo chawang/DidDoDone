@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddToDoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var goalTitleTextField: UITextField!
     @IBOutlet weak var repetitionTextField: UITextField!

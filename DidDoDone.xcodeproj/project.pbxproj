@@ -19,9 +19,9 @@
 		E6336F621E4507D700D8228D /* DidDoDoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F611E4507D700D8228D /* DidDoDoneUITests.swift */; };
 		E6336F711E453A4400D8228D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F701E453A4400D8228D /* MainViewController.swift */; };
 		E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F741E45469000D8228D /* SettingsViewController.swift */; };
-		E6336F781E48388800D8228D /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F771E48388800D8228D /* ToDoCell.swift */; };
+		E6336F781E48388800D8228D /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F771E48388800D8228D /* GoalCell.swift */; };
 		E6433A571E527615009469DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6433A561E527615009469DC /* User.swift */; };
-		E665609E1E4A7FE000EB01D0 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E665609D1E4A7FE000EB01D0 /* AddToDoViewController.swift */; };
+		E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */; };
 		E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
 		E69593701E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
 		E69593711E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
@@ -29,6 +29,7 @@
 		E69593781E51833100EF6C84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E69593761E51833100EF6C84 /* GoogleService-Info.plist */; };
 		E69593791E51833100EF6C84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E69593761E51833100EF6C84 /* GoogleService-Info.plist */; };
 		E6ADB08E1E5443B400458C34 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADB08D1E5443B400458C34 /* Helpers.swift */; };
+		E6EDB9281E5681F900269F6C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EDB9271E5681F900269F6C /* Goal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,13 +71,14 @@
 		E6336F631E4507D700D8228D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6336F701E453A4400D8228D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E6336F741E45469000D8228D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		E6336F771E48388800D8228D /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		E6336F771E48388800D8228D /* GoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		E6433A561E527615009469DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E665609D1E4A7FE000EB01D0 /* AddToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		E695936E1E516D5D00EF6C84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E69593761E51833100EF6C84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E6ADB08D1E5443B400458C34 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E6C74B9818B2A3F1A7A62B4E /* Pods_DidDoDoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6EDB9271E5681F900269F6C /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		E7D8984F35B628B66CFF007A /* Pods_DidDoDoneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDoneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC322EF96120045BBFFCA1DF /* Pods_DidDoDone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -194,7 +196,7 @@
 			children = (
 				E6336F701E453A4400D8228D /* MainViewController.swift */,
 				E6336F741E45469000D8228D /* SettingsViewController.swift */,
-				E665609D1E4A7FE000EB01D0 /* AddToDoViewController.swift */,
+				E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */,
 				E60149321E4BC17700280472 /* DetailToDoViewController.swift */,
 				E695936E1E516D5D00EF6C84 /* LoginViewController.swift */,
 			);
@@ -204,7 +206,7 @@
 		E6336F761E48379300D8228D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E6336F771E48388800D8228D /* ToDoCell.swift */,
+				E6336F771E48388800D8228D /* GoalCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				E6433A561E527615009469DC /* User.swift */,
+				E6EDB9271E5681F900269F6C /* Goal.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -504,15 +507,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6EDB9281E5681F900269F6C /* Goal.swift in Sources */,
 				E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */,
 				E60149331E4BC17700280472 /* DetailToDoViewController.swift in Sources */,
 				E6336F711E453A4400D8228D /* MainViewController.swift in Sources */,
 				E6ADB08E1E5443B400458C34 /* Helpers.swift in Sources */,
-				E665609E1E4A7FE000EB01D0 /* AddToDoViewController.swift in Sources */,
+				E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */,
 				E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */,
 				E6433A571E527615009469DC /* User.swift in Sources */,
 				E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */,
-				E6336F781E48388800D8228D /* ToDoCell.swift in Sources */,
+				E6336F781E48388800D8228D /* GoalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

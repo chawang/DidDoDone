@@ -19,7 +19,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     let defaults = UserDefaults.standard
     
     let ref = FIRDatabase.database().reference()
-    let user = FIRAuth.auth()?.currentUser
+    let user = FIRAuth.auth()?.currentUser?.uid
+    var dbGoals = [String: Dictionary<String, String>]()
+    var goals:[Goal]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +29,38 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         toDoTableView.delegate = self
         toDoTableView.rowHeight = UITableViewAutomaticDimension
         toDoTableView.estimatedRowHeight = 100
+        
+//        ref.observe(FIRDataEventType.value, with: { (snapshot) in
+//            self.dictionary = snapshot.value as? [String : Any] ?? [:]
+//            print("Saved dictionary:")
+//            print(self.dictionary)
+//            
+//            print("Bound user:")
+//            print(self.dictionary.count)
+//        })
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getUserInfo()
+    }
+    
+    func getUserInfo(){
+        ref.child("user").child(user!).observeSingleEvent(of: .value, with: { (snapshot) in
+            //             Get user value
+            self.dbGoals = snapshot.value as! [String : Dictionary<String, String>]
+            self.goals = Goal.DBToArray(dictionary: self.dbGoals)
+            
+            self.toDoTableView.reloadData()
+//            print("DB Goals:")
+//            print(self.dbGoals)
+            
+            //            let username = value?["username"] as? String ?? ""
+            //            let user = User.init(username: username)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     @IBAction func decrement(_ sender: Any) {
         let initial = Int(intervalLabel.text!)
         let unformattedText = initial! - 1
@@ -43,28 +75,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let cellNumber = self.dbGoals.count
+        return cellNumber
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! GoalCell
         
-        cell.setToDoCell(row: indexPath.row)
+        let row = indexPath.row
+        cell.setToDoCell(goal: self.goals[row])
         
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        Repeats because segue is already bound in storyboard
-//        performSegue(withIdentifier: "ShowToDoDetailsSegue", sender: self)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ShowToDoDetailsSegue") {
-            let cell = sender as! ToDoCell
+            let cell = sender as! GoalCell
             let index = toDoTableView.indexPath(for: cell)
             let row = index?.row
             
@@ -75,5 +99,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        Repeats because segue is already bound in storyboard
+        //        performSegue(withIdentifier: "ShowToDoDetailsSegue", sender: self)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
 
