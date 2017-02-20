@@ -12,13 +12,13 @@ class Goal: NSObject {
     var goalName: String?
     var repetition: Int?
     var frequency: String?
-    var dateCreated: Double?
+    var dateCreated: String?
    
     init(goalName: String, dictionary:Dictionary<String, String>){
-            self.goalName = goalName
-            repetition = Int(dictionary["repetition"]!)
-            dateCreated = Double(dictionary["created"]!)
-            frequency = dictionary["frequency"]
+        self.goalName = goalName
+        repetition = Int(dictionary["repetition"]!)
+        frequency = dictionary["frequency"]
+        dateCreated = dictionary["create"]
     }
     
     class func DBToArray(dictionary: Dictionary<String, Dictionary<String, String>>) -> [Goal] {
@@ -34,4 +34,12 @@ class Goal: NSObject {
         return goals
     }
     
+    func stringToDate(_ dateString: String) -> Date {
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy-MM-dd///HH:mm.ss"
+        
+        let date = myDateFormatter.date(from: dateString)
+        
+        return date!
+    }
 }

@@ -45,9 +45,10 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let goal = goalTitleTextField.text!
         let rep = repetitionTextField.text!
         let freq = frequency[frequencyPicker.selectedRow(inComponent: 0)]
-        let date = Date()
+        let dateCreated = Date()
+        let dateString = dateToString(dateCreated)
         
-        let savedInfo = ["repetition":rep, "frequency":freq, "created":"\(date.timeIntervalSinceReferenceDate)"]
+        let savedInfo = ["repetition":rep, "frequency":freq, "created":dateString]
 
         //TODO:write a check for duplicates
         self.ref.child("user/\((user?.uid)!)/\(goal)").setValue(savedInfo)
@@ -57,6 +58,14 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 //        self.ref.child("goal").child((user?.uid)!).setValue([goal:rep])
     }
 
+    func dateToString(_ date:Date) -> String {
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy-MM-dd///HH:mm.ss"
+        let dateString = myDateFormatter.string(from: date)
+        
+        return dateString
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == goalTitleTextField) {
             repetitionTextField.becomeFirstResponder()

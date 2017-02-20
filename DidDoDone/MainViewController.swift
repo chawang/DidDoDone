@@ -46,16 +46,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getUserInfo(){
         ref.child("user").child(user!).observeSingleEvent(of: .value, with: { (snapshot) in
-            //             Get user value
-            self.dbGoals = snapshot.value as! [String : Dictionary<String, String>]
-            self.goals = Goal.DBToArray(dictionary: self.dbGoals)
-            
-            self.toDoTableView.reloadData()
-//            print("DB Goals:")
-//            print(self.dbGoals)
-            
-            //            let username = value?["username"] as? String ?? ""
-            //            let user = User.init(username: username)
+            if (!(snapshot.value is NSNull)) {
+                self.dbGoals = snapshot.value as! [String : Dictionary<String, String>]
+                self.goals = Goal.DBToArray(dictionary: self.dbGoals)
+                
+                self.toDoTableView.reloadData()
+//                let username = value?["username"] as? String ?? ""
+//                let user = User.init(username: username)
+            }
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -75,15 +73,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellNumber = self.dbGoals.count
+        var cellNumber = self.dbGoals.count
+        if (cellNumber == 0) {
+            cellNumber = 1
+        }
         return cellNumber
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! GoalCell
         
         let row = indexPath.row
-        cell.setToDoCell(goal: self.goals[row])
-        
+        if (self.goals == nil) {
+            cell.goalNameLabel.text = "You haven't set any goals yet!"
+            cell.statusImage.image = UIImage(named:"")
+        } else {
+            cell.setGoalCell(goal: self.goals[row])
+        }
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,13 +100,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let detailView = segue.destination as! DetailToDoViewController
 //            View controller isn't fully initialized yet so label cannot be written too directly
 //            detailView.goalLabel.text = "testing"
-            detailView.goalText = "\(cell.toDoItemLabel.text!) of row:\(row!)"
+            detailView.goalText = "\(cell.goalNameLabel.text!) of row:\(row!)"
         }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        Repeats because segue is already bound in storyboard
-        //        performSegue(withIdentifier: "ShowToDoDetailsSegue", sender: self)
+//        Repeats because segue is already bound in storyboard
+//        performSegue(withIdentifier: "ShowToDoDetailsSegue", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

@@ -12,10 +12,10 @@ import Foundation
 class GoalCell: UITableViewCell {
 
     @IBOutlet weak var statusImage: UIImageView!
-    @IBOutlet weak var toDoItemLabel: UILabel!
+    @IBOutlet weak var goalNameLabel: UILabel!
     
-    func setToDoCell (goal Goal: Goal) {
-        toDoItemLabel.text = Goal.goalName
+    func setGoalCell (goal Goal: Goal) {
+        goalNameLabel.text = Goal.goalName
         statusImage.image = UIImage(named:"Ok")
     }
     

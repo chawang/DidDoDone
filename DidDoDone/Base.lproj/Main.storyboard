@@ -160,8 +160,8 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="goalNameLabel" destination="KJf-iF-6sa" id="LCE-UP-PAy"/>
                                             <outlet property="statusImage" destination="scn-AO-ELy" id="DEQ-Bd-6Mz"/>
-                                            <outlet property="toDoItemLabel" destination="KJf-iF-6sa" id="N1x-FX-4Mp"/>
                                             <segue destination="yhe-5L-A9R" kind="show" identifier="ShowToDoDetailsSegue" id="DJx-QS-QWg"/>
                                         </connections>
                                     </tableViewCell>
