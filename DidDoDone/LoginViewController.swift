@@ -12,6 +12,7 @@ import Firebase
 class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var errorMessageLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,9 @@ class LoginViewController: UIViewController {
     @IBAction func onLogin(_ sender: Any) {
         FIRAuth.auth()?.signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if (error != nil) {
-                print(error)
+                let message = error as! NSError
+                self.errorMessageLabel.text = message.localizedDescription
+                self.errorMessageLabel.isHidden = false
             } else {
                 self.performSegue(withIdentifier: "LoginSegue", sender: user)
             }
@@ -37,7 +40,9 @@ class LoginViewController: UIViewController {
     @IBAction func onCreate(_ sender: Any) {
         FIRAuth.auth()?.createUser(withEmail: email.text!, password: password.text!) { (user, error) in
             if (error != nil) {
-                print(error)
+                let message = error as! NSError
+                self.errorMessageLabel.text = message.localizedDescription
+                self.errorMessageLabel.isHidden = false
             } else {
                 self.performSegue(withIdentifier: "LoginSegue", sender: user)
             }

@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o8m-GO-YoU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ok" translatesAutoresizingMaskIntoConstraints="NO" id="o8m-GO-YoU">
                                 <rect key="frame" x="62" y="90" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="GLa-V6-ZSb"/>
@@ -45,9 +45,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEs-LX-25G">
-                                <rect key="frame" x="257" y="490" width="48" height="33"/>
+                                <rect key="frame" x="240" y="490" width="55" height="33"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
-                                <state key="normal" title="Create"/>
+                                <state key="normal" title="Sign up"/>
                                 <connections>
                                     <action selector="onCreate:" destination="sBZ-RC-Vmm" eventType="touchUpInside" id="t8r-Xn-p5b"/>
                                 </connections>
@@ -65,34 +65,47 @@
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cd4-p9-gJf">
-                                <rect key="frame" x="70" y="490" width="41" height="33"/>
+                                <rect key="frame" x="80" y="490" width="41" height="33"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="onLogin:" destination="sBZ-RC-Vmm" eventType="touchUpInside" id="0yV-IP-o0H"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5U-u5-tFU">
+                                <rect key="frame" x="143" y="533" width="90" height="18"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Sxf-HW-dT9" firstAttribute="top" secondItem="o8m-GO-YoU" secondAttribute="bottom" constant="50" id="0Ed-f4-o9O"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K5U-u5-tFU" secondAttribute="trailing" constant="50" id="47C-ip-nLZ"/>
                             <constraint firstItem="Sxf-HW-dT9" firstAttribute="centerX" secondItem="Nxv-UW-2p6" secondAttribute="centerX" id="48e-h3-b8E"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Sxf-HW-dT9" secondAttribute="trailing" constant="50" id="5pa-dg-OSP"/>
-                            <constraint firstItem="Cd4-p9-gJf" firstAttribute="leading" secondItem="UOe-eR-1HS" secondAttribute="leading" constant="20" id="7qw-rb-0A1"/>
+                            <constraint firstItem="Cd4-p9-gJf" firstAttribute="leading" secondItem="UOe-eR-1HS" secondAttribute="leading" constant="30" id="7qw-rb-0A1"/>
+                            <constraint firstItem="K5U-u5-tFU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nxv-UW-2p6" secondAttribute="leading" constant="50" id="DvA-bJ-6TC"/>
                             <constraint firstItem="Cd4-p9-gJf" firstAttribute="top" secondItem="UOe-eR-1HS" secondAttribute="bottom" constant="20" id="FxV-DK-gru"/>
                             <constraint firstItem="dEs-LX-25G" firstAttribute="top" secondItem="UOe-eR-1HS" secondAttribute="bottom" constant="20" id="GA1-ee-YAj"/>
                             <constraint firstItem="UOe-eR-1HS" firstAttribute="centerX" secondItem="Nxv-UW-2p6" secondAttribute="centerX" id="Ihe-zK-fw3"/>
+                            <constraint firstItem="K5U-u5-tFU" firstAttribute="centerX" secondItem="Nxv-UW-2p6" secondAttribute="centerX" id="Im9-jA-w7I"/>
+                            <constraint firstItem="blA-Mx-giI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="K5U-u5-tFU" secondAttribute="bottom" constant="20" id="KRt-sf-5BY"/>
                             <constraint firstItem="UOe-eR-1HS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Nxv-UW-2p6" secondAttribute="leading" constant="50" id="KaO-yD-Qc1"/>
                             <constraint firstItem="Sxf-HW-dT9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Nxv-UW-2p6" secondAttribute="leading" constant="50" id="MpR-zm-uBD"/>
+                            <constraint firstItem="dEs-LX-25G" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cd4-p9-gJf" secondAttribute="trailing" constant="30" id="NYX-hY-afq"/>
                             <constraint firstItem="o8m-GO-YoU" firstAttribute="top" secondItem="eDB-lf-Qsb" secondAttribute="bottom" constant="70" id="OHC-P8-ohr"/>
+                            <constraint firstItem="K5U-u5-tFU" firstAttribute="top" secondItem="Cd4-p9-gJf" secondAttribute="bottom" constant="10" id="PNy-5b-iLf"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="UOe-eR-1HS" secondAttribute="trailing" constant="50" id="V6K-y6-riQ"/>
                             <constraint firstItem="o8m-GO-YoU" firstAttribute="centerX" secondItem="Nxv-UW-2p6" secondAttribute="centerX" id="m7T-aP-o6t"/>
-                            <constraint firstItem="dEs-LX-25G" firstAttribute="trailing" secondItem="UOe-eR-1HS" secondAttribute="trailing" constant="-20" id="maK-QH-AJb"/>
+                            <constraint firstItem="dEs-LX-25G" firstAttribute="trailing" secondItem="UOe-eR-1HS" secondAttribute="trailing" constant="-30" id="maK-QH-AJb"/>
                             <constraint firstItem="UOe-eR-1HS" firstAttribute="top" secondItem="Sxf-HW-dT9" secondAttribute="bottom" constant="20" id="vNh-g9-u6c"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="email" destination="Sxf-HW-dT9" id="2JJ-F5-TLX"/>
+                        <outlet property="errorMessageLabel" destination="K5U-u5-tFU" id="aag-GB-hlO"/>
                         <outlet property="password" destination="UOe-eR-1HS" id="cdu-13-VnS"/>
                         <segue destination="mKJ-dp-8RM" kind="showDetail" identifier="LoginSegue" action="showViewController:sender:" id="CIB-4m-5u8"/>
                     </connections>
@@ -132,7 +145,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tC3-G8-Qbw" id="8Lj-2N-cdx">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Goal Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJf-iF-6sa">
