@@ -13,10 +13,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loginButton.layer.cornerRadius = 8
+        signUpButton.layer.cornerRadius = loginButton.layer.cornerRadius
+        
         // Do any additional setup after loading the view.
     }
 

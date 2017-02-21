@@ -13,11 +13,18 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
-        // Override point for customization after application launch.
+        
+        let user = FIRAuth.auth()?.currentUser
+        
+        if user != nil {
+            let startHere = storyboard.instantiateViewController(withIdentifier: "GoalNavController")
+            window?.rootViewController = startHere
+        }
+        
         return true
     }
 

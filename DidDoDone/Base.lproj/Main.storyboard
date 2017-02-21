@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="jwO-Y5-AbW">
             <objects>
-                <navigationController id="mKJ-dp-8RM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GoalNavController" id="mKJ-dp-8RM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4HD-va-aya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,9 +45,16 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEs-LX-25G">
-                                <rect key="frame" x="240" y="490" width="55" height="33"/>
+                                <rect key="frame" x="215" y="490" width="80" height="45"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="TM3-U8-m6b"/>
+                                    <constraint firstAttribute="width" constant="80" id="uWP-H6-pJy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
-                                <state key="normal" title="Sign up"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="onCreate:" destination="sBZ-RC-Vmm" eventType="touchUpInside" id="t8r-Xn-p5b"/>
                                 </connections>
@@ -65,15 +72,22 @@
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cd4-p9-gJf">
-                                <rect key="frame" x="80" y="490" width="41" height="33"/>
+                                <rect key="frame" x="80" y="490" width="80" height="45"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="J8I-36-h61"/>
+                                    <constraint firstAttribute="width" constant="80" id="ye0-Ya-mIu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="onLogin:" destination="sBZ-RC-Vmm" eventType="touchUpInside" id="0yV-IP-o0H"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5U-u5-tFU">
-                                <rect key="frame" x="143" y="533" width="90" height="18"/>
+                                <rect key="frame" x="143" y="545" width="90" height="18"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -106,7 +120,9 @@
                     <connections>
                         <outlet property="email" destination="Sxf-HW-dT9" id="2JJ-F5-TLX"/>
                         <outlet property="errorMessageLabel" destination="K5U-u5-tFU" id="aag-GB-hlO"/>
+                        <outlet property="loginButton" destination="Cd4-p9-gJf" id="Au4-Dt-3TT"/>
                         <outlet property="password" destination="UOe-eR-1HS" id="cdu-13-VnS"/>
+                        <outlet property="signUpButton" destination="dEs-LX-25G" id="VCW-gg-2lf"/>
                         <segue destination="mKJ-dp-8RM" kind="showDetail" identifier="LoginSegue" action="showViewController:sender:" id="CIB-4m-5u8"/>
                     </connections>
                 </viewController>

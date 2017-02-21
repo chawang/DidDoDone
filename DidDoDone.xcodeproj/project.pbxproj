@@ -20,7 +20,6 @@
 		E6336F711E453A4400D8228D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F701E453A4400D8228D /* MainViewController.swift */; };
 		E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F741E45469000D8228D /* SettingsViewController.swift */; };
 		E6336F781E48388800D8228D /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F771E48388800D8228D /* GoalCell.swift */; };
-		E6433A571E527615009469DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6433A561E527615009469DC /* User.swift */; };
 		E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */; };
 		E684207C1E5BA3B500C8640F /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684207B1E5BA3B500C8640F /* FirebaseClient.swift */; };
 		E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
@@ -73,7 +72,6 @@
 		E6336F701E453A4400D8228D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E6336F741E45469000D8228D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E6336F771E48388800D8228D /* GoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
-		E6433A561E527615009469DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		E684207B1E5BA3B500C8640F /* FirebaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseClient.swift; path = ../FirebaseClient.swift; sourceTree = "<group>"; };
 		E695936E1E516D5D00EF6C84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 		E6D213DD1E4D293600829B72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E6433A561E527615009469DC /* User.swift */,
 				E6EDB9271E5681F900269F6C /* Goal.swift */,
 			);
 			name = Model;
@@ -518,7 +515,6 @@
 				E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */,
 				E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */,
 				E684207C1E5BA3B500C8640F /* FirebaseClient.swift in Sources */,
-				E6433A571E527615009469DC /* User.swift in Sources */,
 				E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */,
 				E6336F781E48388800D8228D /* GoalCell.swift in Sources */,
 			);
