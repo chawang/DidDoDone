@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UIViewController {
-
+    let firebaseAuth = FIRAuth.auth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    @IBAction func onSignOut(_ sender: Any) {
+        do {
+            try firebaseAuth?.signOut()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "userDidLogoutNotification"), object: nil)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 
     override func didReceiveMemoryWarning() {

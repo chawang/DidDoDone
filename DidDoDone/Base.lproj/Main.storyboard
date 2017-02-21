@@ -445,8 +445,17 @@
                                         <rect key="frame" x="114.5" y="80" width="145" height="30"/>
                                         <state key="normal" title="Restore my purchase"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxJ-3I-qzo">
+                                        <rect key="frame" x="157" y="190" width="60" height="30"/>
+                                        <state key="normal" title="Sign Out"/>
+                                        <connections>
+                                            <action selector="onSignOut:" destination="BV3-Yv-vda" eventType="touchUpInside" id="q2h-1h-EJQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="jxJ-3I-qzo" firstAttribute="top" secondItem="p82-Pb-tuW" secondAttribute="bottom" constant="80" id="G4B-pm-a5Y"/>
+                                    <constraint firstItem="jxJ-3I-qzo" firstAttribute="centerX" secondItem="Gul-8C-9T1" secondAttribute="centerX" id="TBL-5Y-EQT"/>
                                     <constraint firstItem="p82-Pb-tuW" firstAttribute="top" secondItem="Gul-8C-9T1" secondAttribute="top" constant="80" id="Xch-mh-hZV"/>
                                     <constraint firstItem="p82-Pb-tuW" firstAttribute="leading" secondItem="Gul-8C-9T1" secondAttribute="leading" constant="115" id="oyl-Ra-bMn"/>
                                     <constraint firstAttribute="trailing" secondItem="p82-Pb-tuW" secondAttribute="trailing" constant="115" id="oyv-pm-WbC"/>
