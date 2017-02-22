@@ -10,7 +10,7 @@
 		85663EBB1BB88865DCCDDBF1 /* Pods_DidDoDone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC322EF96120045BBFFCA1DF /* Pods_DidDoDone.framework */; };
 		96ADC326A13752AD1752B7A0 /* Pods_DidDoDoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C74B9818B2A3F1A7A62B4E /* Pods_DidDoDoneTests.framework */; };
 		DD36815C22420349F5EFBEB1 /* Pods_DidDoDoneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D8984F35B628B66CFF007A /* Pods_DidDoDoneUITests.framework */; };
-		E60149331E4BC17700280472 /* DetailToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60149321E4BC17700280472 /* DetailToDoViewController.swift */; };
+		E60149331E4BC17700280472 /* DetailGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60149321E4BC17700280472 /* DetailGoalViewController.swift */; };
 		E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F411E4507D600D8228D /* AppDelegate.swift */; };
 		E6336F471E4507D600D8228D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6336F451E4507D600D8228D /* Main.storyboard */; };
 		E6336F491E4507D600D8228D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6336F481E4507D600D8228D /* Assets.xcassets */; };
@@ -56,7 +56,7 @@
 		73067E83FA98DAD58E52F6C3 /* Pods-DidDoDoneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDoneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDoneTests/Pods-DidDoDoneTests.release.xcconfig"; sourceTree = "<group>"; };
 		C72E759C3A19130E769FC262 /* Pods-DidDoDoneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDoneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDoneTests/Pods-DidDoDoneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5DBA10221B112147D468D6C /* Pods-DidDoDone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDone/Pods-DidDoDone.debug.xcconfig"; sourceTree = "<group>"; };
-		E60149321E4BC17700280472 /* DetailToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailToDoViewController.swift; sourceTree = "<group>"; };
+		E60149321E4BC17700280472 /* DetailGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGoalViewController.swift; sourceTree = "<group>"; };
 		E6336F3E1E4507D600D8228D /* DidDoDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DidDoDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6336F411E4507D600D8228D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6336F461E4507D600D8228D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				E6336F701E453A4400D8228D /* MainViewController.swift */,
 				E6336F741E45469000D8228D /* SettingsViewController.swift */,
 				E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */,
-				E60149321E4BC17700280472 /* DetailToDoViewController.swift */,
+				E60149321E4BC17700280472 /* DetailGoalViewController.swift */,
 				E695936E1E516D5D00EF6C84 /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
@@ -509,7 +509,7 @@
 			files = (
 				E6EDB9281E5681F900269F6C /* Goal.swift in Sources */,
 				E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */,
-				E60149331E4BC17700280472 /* DetailToDoViewController.swift in Sources */,
+				E60149331E4BC17700280472 /* DetailGoalViewController.swift in Sources */,
 				E6336F711E453A4400D8228D /* MainViewController.swift in Sources */,
 				E6ADB08E1E5443B400458C34 /* Helpers.swift in Sources */,
 				E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */,

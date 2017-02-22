@@ -286,10 +286,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--Detail To Do View Controller-->
+        <!--Detail Goal View Controller-->
         <scene sceneID="Xcu-2c-Ezm">
             <objects>
-                <viewController id="yhe-5L-A9R" customClass="DetailToDoViewController" customModule="DidDoDone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yhe-5L-A9R" customClass="DetailGoalViewController" customModule="DidDoDone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2wN-L4-Rbh"/>
                         <viewControllerLayoutGuide type="bottom" id="63S-G2-jSM"/>

@@ -8,15 +8,16 @@
 
 import UIKit
 
-class DetailToDoViewController: UIViewController {
+class DetailGoalViewController: UIViewController {
 
     @IBOutlet weak var goalLabel: UILabel!
     var goalText: String = ""
+    var goal: Goal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        goalLabel.text = goalText
+        goalLabel.text = goal.goalName
     }
 
     override func didReceiveMemoryWarning() {

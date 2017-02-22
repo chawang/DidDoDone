@@ -95,12 +95,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         if (segue.identifier == "ShowToDoDetailsSegue") {
             let cell = sender as! GoalCell
             let index = toDoTableView.indexPath(for: cell)
-            let row = index?.row
+            let row = index!.row
             
-            let detailView = segue.destination as! DetailToDoViewController
+            let detailView = segue.destination as! DetailGoalViewController
 //            View controller isn't fully initialized yet so label cannot be written too directly
-//            detailView.goalLabel.text = "testing"
-            detailView.goalText = "\(cell.goalNameLabel.text!) of row:\(row!)"
+            detailView.goal = self.goals[row]
         }
     }
 
