@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85663EBB1BB88865DCCDDBF1 /* Pods_DidDoDone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC322EF96120045BBFFCA1DF /* Pods_DidDoDone.framework */; };
-		96ADC326A13752AD1752B7A0 /* Pods_DidDoDoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C74B9818B2A3F1A7A62B4E /* Pods_DidDoDoneTests.framework */; };
-		DD36815C22420349F5EFBEB1 /* Pods_DidDoDoneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D8984F35B628B66CFF007A /* Pods_DidDoDoneUITests.framework */; };
+		64009C2C9BA110AEA2C1A1FE /* Pods_DidDoDoneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E1144A1D781FEBC51F07D6 /* Pods_DidDoDoneUITests.framework */; };
+		6B88D980AC0578012B5F46A6 /* Pods_DidDoDone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C729ACCB4AFE9E0F95119C1E /* Pods_DidDoDone.framework */; };
+		D683B31E189ED9CBEDD12E1D /* Pods_DidDoDoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46849B2C897A332016D94C1F /* Pods_DidDoDoneTests.framework */; };
 		E60149331E4BC17700280472 /* DetailGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60149321E4BC17700280472 /* DetailGoalViewController.swift */; };
 		E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F411E4507D600D8228D /* AppDelegate.swift */; };
 		E6336F471E4507D600D8228D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6336F451E4507D600D8228D /* Main.storyboard */; };
@@ -21,7 +21,6 @@
 		E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F741E45469000D8228D /* SettingsViewController.swift */; };
 		E6336F781E48388800D8228D /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F771E48388800D8228D /* GoalCell.swift */; };
 		E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */; };
-		E684207C1E5BA3B500C8640F /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684207B1E5BA3B500C8640F /* FirebaseClient.swift */; };
 		E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
 		E69593701E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
 		E69593711E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
@@ -50,10 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18E1144A1D781FEBC51F07D6 /* Pods_DidDoDoneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDoneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27114955B18B05FF11CA7B4B /* Pods-DidDoDoneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDoneUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDoneUITests/Pods-DidDoDoneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		28B1C234ECFD50F18AFD1794 /* Pods-DidDoDoneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDoneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDoneUITests/Pods-DidDoDoneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		369F281293171012B6CD2CE7 /* Pods-DidDoDone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDone.release.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDone/Pods-DidDoDone.release.xcconfig"; sourceTree = "<group>"; };
+		46849B2C897A332016D94C1F /* Pods_DidDoDoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73067E83FA98DAD58E52F6C3 /* Pods-DidDoDoneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDoneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDoneTests/Pods-DidDoDoneTests.release.xcconfig"; sourceTree = "<group>"; };
+		C729ACCB4AFE9E0F95119C1E /* Pods_DidDoDone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72E759C3A19130E769FC262 /* Pods-DidDoDoneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDoneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDoneTests/Pods-DidDoDoneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5DBA10221B112147D468D6C /* Pods-DidDoDone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidDoDone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DidDoDone/Pods-DidDoDone.debug.xcconfig"; sourceTree = "<group>"; };
 		E60149321E4BC17700280472 /* DetailGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGoalViewController.swift; sourceTree = "<group>"; };
@@ -73,14 +75,10 @@
 		E6336F741E45469000D8228D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E6336F771E48388800D8228D /* GoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
-		E684207B1E5BA3B500C8640F /* FirebaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseClient.swift; path = ../FirebaseClient.swift; sourceTree = "<group>"; };
 		E695936E1E516D5D00EF6C84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E69593761E51833100EF6C84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E6ADB08D1E5443B400458C34 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		E6C74B9818B2A3F1A7A62B4E /* Pods_DidDoDoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EDB9271E5681F900269F6C /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
-		E7D8984F35B628B66CFF007A /* Pods_DidDoDoneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDoneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC322EF96120045BBFFCA1DF /* Pods_DidDoDone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidDoDone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85663EBB1BB88865DCCDDBF1 /* Pods_DidDoDone.framework in Frameworks */,
+				6B88D980AC0578012B5F46A6 /* Pods_DidDoDone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96ADC326A13752AD1752B7A0 /* Pods_DidDoDoneTests.framework in Frameworks */,
+				D683B31E189ED9CBEDD12E1D /* Pods_DidDoDoneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,23 +102,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD36815C22420349F5EFBEB1 /* Pods_DidDoDoneUITests.framework in Frameworks */,
+				64009C2C9BA110AEA2C1A1FE /* Pods_DidDoDoneUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A6DF268F5D1453FA5414ECB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FC322EF96120045BBFFCA1DF /* Pods_DidDoDone.framework */,
-				E6C74B9818B2A3F1A7A62B4E /* Pods_DidDoDoneTests.framework */,
-				E7D8984F35B628B66CFF007A /* Pods_DidDoDoneUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		97F27EBB357C26EACFB6CCB1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +122,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B7C997D2C545D333BB613A94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C729ACCB4AFE9E0F95119C1E /* Pods_DidDoDone.framework */,
+				46849B2C897A332016D94C1F /* Pods_DidDoDoneTests.framework */,
+				18E1144A1D781FEBC51F07D6 /* Pods_DidDoDoneUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6336F351E4507D600D8228D = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +140,7 @@
 				E6336F601E4507D700D8228D /* DidDoDoneUITests */,
 				E6336F3F1E4507D600D8228D /* Products */,
 				97F27EBB357C26EACFB6CCB1 /* Pods */,
-				3A6DF268F5D1453FA5414ECB /* Frameworks */,
+				B7C997D2C545D333BB613A94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,7 +157,6 @@
 		E6336F401E4507D600D8228D /* DidDoDone */ = {
 			isa = PBXGroup;
 			children = (
-				E684207B1E5BA3B500C8640F /* FirebaseClient.swift */,
 				E6D213DD1E4D293600829B72 /* Model */,
 				E6336F761E48379300D8228D /* Views */,
 				E6336F411E4507D600D8228D /* AppDelegate.swift */,
@@ -514,7 +511,6 @@
 				E6ADB08E1E5443B400458C34 /* Helpers.swift in Sources */,
 				E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */,
 				E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */,
-				E684207C1E5BA3B500C8640F /* FirebaseClient.swift in Sources */,
 				E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */,
 				E6336F781E48388800D8228D /* GoalCell.swift in Sources */,
 			);
