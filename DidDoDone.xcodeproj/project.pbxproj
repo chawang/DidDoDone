@@ -20,6 +20,7 @@
 		E6336F711E453A4400D8228D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F701E453A4400D8228D /* MainViewController.swift */; };
 		E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F741E45469000D8228D /* SettingsViewController.swift */; };
 		E6336F781E48388800D8228D /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6336F771E48388800D8228D /* GoalCell.swift */; };
+		E64918FC1E664B6400401BF9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64918FB1E664B6400401BF9 /* DateHelper.swift */; };
 		E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */; };
 		E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
 		E69593701E516D5D00EF6C84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695936E1E516D5D00EF6C84 /* LoginViewController.swift */; };
@@ -27,7 +28,6 @@
 		E69593771E51833100EF6C84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E69593761E51833100EF6C84 /* GoogleService-Info.plist */; };
 		E69593781E51833100EF6C84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E69593761E51833100EF6C84 /* GoogleService-Info.plist */; };
 		E69593791E51833100EF6C84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E69593761E51833100EF6C84 /* GoogleService-Info.plist */; };
-		E6ADB08E1E5443B400458C34 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADB08D1E5443B400458C34 /* Helpers.swift */; };
 		E6EDB9281E5681F900269F6C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EDB9271E5681F900269F6C /* Goal.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,10 +74,10 @@
 		E6336F701E453A4400D8228D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E6336F741E45469000D8228D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E6336F771E48388800D8228D /* GoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		E64918FB1E664B6400401BF9 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		E665609D1E4A7FE000EB01D0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		E695936E1E516D5D00EF6C84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E69593761E51833100EF6C84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E6ADB08D1E5443B400458C34 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E6EDB9271E5681F900269F6C /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +166,7 @@
 				E6336F4A1E4507D600D8228D /* LaunchScreen.storyboard */,
 				E6336F4D1E4507D600D8228D /* Info.plist */,
 				E69593761E51833100EF6C84 /* GoogleService-Info.plist */,
-				E6ADB08D1E5443B400458C34 /* Helpers.swift */,
+				E64918FB1E664B6400401BF9 /* DateHelper.swift */,
 			);
 			path = DidDoDone;
 			sourceTree = "<group>";
@@ -508,7 +508,7 @@
 				E6336F421E4507D600D8228D /* AppDelegate.swift in Sources */,
 				E60149331E4BC17700280472 /* DetailGoalViewController.swift in Sources */,
 				E6336F711E453A4400D8228D /* MainViewController.swift in Sources */,
-				E6ADB08E1E5443B400458C34 /* Helpers.swift in Sources */,
+				E64918FC1E664B6400401BF9 /* DateHelper.swift in Sources */,
 				E665609E1E4A7FE000EB01D0 /* AddGoalViewController.swift in Sources */,
 				E695936F1E516D5D00EF6C84 /* LoginViewController.swift in Sources */,
 				E6336F751E45469000D8228D /* SettingsViewController.swift in Sources */,

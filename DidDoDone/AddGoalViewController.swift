@@ -12,15 +12,17 @@ import Firebase
 class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var goalTitleTextField: UITextField!
-    @IBOutlet weak var repetitionTextField: UITextField!
+    @IBOutlet weak var setTextField: UITextField!
 //    @IBOutlet weak var repetitionPicker: UIPickerView!
-    @IBOutlet weak var frequencyPicker: UIPickerView!
-   
+    @IBOutlet weak var cyclePicker: UIPickerView!
+    @IBOutlet weak var durationSlider: UISlider!
+    @IBOutlet weak var durationLabel: UILabel!
+    
     let ref = FIRDatabase.database().reference()
     let user = FIRAuth.auth()?.currentUser
     
 //    let repetition = ["second(s)", "minutes(s)", "hour(s)", "mile(s)", "km(s)", ]
-    let frequency = ["daily", "weekly", "monthly"]
+    let cycleArray = ["daily", "weekly", "monthly"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,47 +30,43 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 //        repetitionPicker.dataSource = self
 //        repetitionPicker.delegate = self
         
-        frequencyPicker.dataSource = self
-        frequencyPicker.delegate = self
+        cyclePicker.dataSource = self
+        cyclePicker.delegate = self
         
         goalTitleTextField.delegate = self
-        repetitionTextField.delegate = self
+        setTextField.delegate = self
         
-        repetitionTextField.keyboardType = UIKeyboardType.numberPad
+        setTextField.keyboardType = UIKeyboardType.numberPad
         addDoneOverKeyboard()
+        
+        durationSlider.minimumValue = 1
+        durationSlider.maximumValue = 365
+        durationSlider.setValue(365, animated: true)
+        durationLabel.text = "365"
     }
 
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func saveGoal(_ sender: Any) {
-        let goal = goalTitleTextField.text!
-        let rep = repetitionTextField.text!
-        let freq = frequency[frequencyPicker.selectedRow(inComponent: 0)]
-        let dateCreated = Date()
-        let dateString = dateToString(dateCreated)
+        let goalTitle = goalTitleTextField.text!
+        let set = setTextField.text!
+        let cycle = cycleArray[cyclePicker.selectedRow(inComponent: 0)]
+        let date = DateHelper().dateToString()
         
-        let savedInfo = ["repetition":rep, "frequency":freq, "created":dateString]
+        let savedInfo = ["set":set, "cycle":cycle, "duration":durationLabel.text, "created":date ]
 
         //TODO:write a check for duplicates
-        self.ref.child("user/\((user?.uid)!)/\(goal)").setValue(savedInfo)
+        self.ref.child("user/\((user?.uid)!)/\(goalTitle)").setValue(savedInfo)
         dismiss(animated: true, completion: nil)
         
-        //Below code overwrites all child nodes
+        //Overwrites all child nodes
 //        self.ref.child("goal").child((user?.uid)!).setValue([goal:rep])
-    }
-
-    func dateToString(_ date:Date) -> String {
-        let myDateFormatter = DateFormatter()
-        myDateFormatter.dateFormat = "yyyy-MM-dd///HH:mm.ss"
-        let dateString = myDateFormatter.string(from: date)
-        
-        return dateString
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == goalTitleTextField) {
-            repetitionTextField.becomeFirstResponder()
+            setTextField.becomeFirstResponder()
         }
         return false
     }
@@ -88,19 +86,19 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         doneToolbar.setItems(items, animated: true)
         doneToolbar.sizeToFit()
         
-        repetitionTextField.inputAccessoryView = doneToolbar
+        setTextField.inputAccessoryView = doneToolbar
     }
     func doneButtonAction()
     {
-        repetitionTextField.endEditing(true)
+        setTextField.endEditing(true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView == frequencyPicker) {
-            return frequency.count
+        if (pickerView == cyclePicker) {
+            return cycleArray.count
         }
 //        else if (pickerView == repetitionPicker) {
 //            return repetition.count
@@ -109,13 +107,12 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             fatalError("Unhandled picker \(pickerView)")
         }
     }
-    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
         pickerLabel.textAlignment = .center
         var title: String
-        if (pickerView == frequencyPicker) {
-            title = frequency[row]
+        if (pickerView == cyclePicker) {
+            title = cycleArray[row]
             let myTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName:UIFont(name: "Optima", size: 15.0)!,NSForegroundColorAttributeName:UIColor.black])
             pickerLabel.attributedText = myTitle
             return pickerLabel
@@ -131,6 +128,25 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (row == 0) {
+            durationSlider.maximumValue = 365
+            durationSlider.setValue(365, animated: true)
+            durationLabel.text = "365"
+        }
+        if (row == 1) {
+            durationSlider.maximumValue = 52
+            durationSlider.setValue(52, animated: true)
+            durationLabel.text = "52"
+        }
+        if (row == 2) {
+            durationSlider.maximumValue = 12
+            durationSlider.setValue(12, animated: true)
+            durationLabel.text = "12"
+        }
+    }
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        durationLabel.text = "\(currentValue)"
     }
     
     override func didReceiveMemoryWarning() {

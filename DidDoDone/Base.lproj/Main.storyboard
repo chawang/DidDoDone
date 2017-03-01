@@ -387,14 +387,20 @@
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repetition:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-QO-Wde">
-                                <rect key="frame" x="30" y="164" width="93.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-QO-Wde">
+                                <rect key="frame" x="30" y="164" width="31.5" height="24"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghQ-Aj-pb6">
-                                <rect key="frame" x="30" y="308" width="95" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghQ-Aj-pb6">
+                                <rect key="frame" x="30" y="308" width="55" height="24"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhi-13-85U">
+                                <rect key="frame" x="30" y="452" width="83" height="24"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -406,14 +412,32 @@
                                     <constraint firstAttribute="height" constant="80" id="UUY-ue-Xsu"/>
                                 </constraints>
                             </pickerView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wqg-np-5kK">
+                                <rect key="frame" x="28" y="486" width="319" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="Bck-jj-9LK" eventType="valueChanged" id="52I-oI-vJ1"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSJ-7z-flM">
+                                <rect key="frame" x="157" y="526" width="60.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fat-U1-Wmf" firstAttribute="top" secondItem="ghQ-Aj-pb6" secondAttribute="bottom" constant="10" id="1E9-uO-7dT"/>
                             <constraint firstItem="0ZZ-M6-VLF" firstAttribute="centerX" secondItem="U0h-K6-XTC" secondAttribute="centerX" id="27d-1j-U5r"/>
+                            <constraint firstItem="mSJ-7z-flM" firstAttribute="centerX" secondItem="U0h-K6-XTC" secondAttribute="centerX" id="4Is-fd-JIv"/>
                             <constraint firstItem="ceL-jD-4Fh" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="30" id="6z5-QS-q6b"/>
                             <constraint firstItem="ghQ-Aj-pb6" firstAttribute="top" secondItem="0ZZ-M6-VLF" secondAttribute="bottom" constant="30" id="7E6-OK-fg5"/>
+                            <constraint firstItem="wqg-np-5kK" firstAttribute="centerX" secondItem="U0h-K6-XTC" secondAttribute="centerX" id="86L-hD-oYV"/>
                             <constraint firstItem="hqQ-ug-fF2" firstAttribute="top" secondItem="mVx-dl-XV3" secondAttribute="bottom" constant="30" id="EGe-Qi-qWb"/>
+                            <constraint firstItem="mSJ-7z-flM" firstAttribute="top" secondItem="wqg-np-5kK" secondAttribute="bottom" constant="10" id="Ed3-mz-4lX"/>
+                            <constraint firstItem="wqg-np-5kK" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="30" id="Fwg-8X-dbx"/>
+                            <constraint firstItem="wqg-np-5kK" firstAttribute="top" secondItem="jhi-13-85U" secondAttribute="bottom" constant="10" id="J7j-jE-KQD"/>
+                            <constraint firstAttribute="trailing" secondItem="wqg-np-5kK" secondAttribute="trailing" constant="30" id="N42-QS-27S"/>
                             <constraint firstItem="hqQ-ug-fF2" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="30" id="NoC-Gz-KBM"/>
                             <constraint firstItem="v1A-UI-CBH" firstAttribute="top" secondItem="eLf-M2-RFz" secondAttribute="bottom" constant="40" id="OVv-Db-P5L"/>
                             <constraint firstItem="ghQ-Aj-pb6" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="30" id="OoT-2g-PZj"/>
@@ -422,6 +446,7 @@
                             <constraint firstItem="66y-fP-PyM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fat-U1-Wmf" secondAttribute="bottom" constant="100" id="PJB-jr-vY4"/>
                             <constraint firstAttribute="trailing" secondItem="66y-fP-PyM" secondAttribute="trailing" constant="100" id="QlD-Mt-9DC"/>
                             <constraint firstItem="66y-fP-PyM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eLf-M2-RFz" secondAttribute="trailing" constant="30" id="RSu-63-VWO"/>
+                            <constraint firstItem="jhi-13-85U" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="30" id="TEh-30-4Jy"/>
                             <constraint firstItem="fat-U1-Wmf" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="30" id="U63-ku-oc3"/>
                             <constraint firstItem="ceL-jD-4Fh" firstAttribute="top" secondItem="hqQ-ug-fF2" secondAttribute="bottom" constant="10" id="bBj-vE-GsL"/>
                             <constraint firstItem="eLf-M2-RFz" firstAttribute="height" secondItem="66y-fP-PyM" secondAttribute="height" id="imT-df-knC"/>
@@ -429,18 +454,21 @@
                             <constraint firstItem="eLf-M2-RFz" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="100" id="nFq-B5-htU"/>
                             <constraint firstItem="vbe-QO-Wde" firstAttribute="top" secondItem="ceL-jD-4Fh" secondAttribute="bottom" constant="30" id="s8s-NG-2RS"/>
                             <constraint firstItem="vbe-QO-Wde" firstAttribute="leading" secondItem="U0h-K6-XTC" secondAttribute="leading" constant="30" id="tT5-th-mBu"/>
+                            <constraint firstItem="jhi-13-85U" firstAttribute="top" secondItem="fat-U1-Wmf" secondAttribute="bottom" constant="30" id="u87-Mp-GZo"/>
                             <constraint firstItem="0ZZ-M6-VLF" firstAttribute="top" secondItem="vbe-QO-Wde" secondAttribute="bottom" constant="10" id="zOs-80-zje"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="frequencyPicker" destination="fat-U1-Wmf" id="99c-Sk-Yo7"/>
+                        <outlet property="cyclePicker" destination="fat-U1-Wmf" id="uor-lu-lPm"/>
+                        <outlet property="durationLabel" destination="mSJ-7z-flM" id="7bp-hq-E8U"/>
+                        <outlet property="durationSlider" destination="wqg-np-5kK" id="0BG-aL-Hvf"/>
                         <outlet property="goalTitleTextField" destination="ceL-jD-4Fh" id="YaE-xu-EL0"/>
-                        <outlet property="repetitionTextField" destination="0ZZ-M6-VLF" id="fYq-2V-vTV"/>
+                        <outlet property="setTextField" destination="0ZZ-M6-VLF" id="oU8-dO-SNG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiC-Jr-dFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="776"/>
+            <point key="canvasLocation" x="32.799999999999997" y="775.86206896551732"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="d1g-Pd-8LV">
